@@ -13,6 +13,7 @@ router.get('/weather', (req, res) => {
     axios.get(url)
     .then((response) => {
         const myWeather = response.data
+        console.log(myWeather)
         res.render('weather', {myWeather})
     })
     .catch(error => {
