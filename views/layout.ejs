@@ -14,14 +14,16 @@
           <% if (!currentUser) { %>
             <li><a href="/auth/signup">Signup</a></li>
             <li><a href="/auth/login">Login</a></li>
+            <li><a href="/weather">Weather</a></li>
           <% } else {%>
             <li><a href="/auth/logout">Logout</a></li>
             <li><a href="/profile">Profile</a></li>
+            <li><a href="/weather">Your Weather</a></li>
           <% } %>
         </ul>
       </nav>
     </header>
-    <h1>Authentication</h1>
+    <h1>Weather</h1>
     <%- body %>
   </body>
 </html>
