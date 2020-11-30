@@ -3,8 +3,8 @@ const router = express.Router();
 const db = require('../models');
 const axios = require('axios');
 
-router.get('/weather', (req, res) =>{
-    console.log(req);
+router.get('/weather', (req, res) => {
+    res.render('weather');
 })
 
-modules.exports = router
+module.exports = router;
