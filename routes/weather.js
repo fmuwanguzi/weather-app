@@ -12,12 +12,13 @@ let url = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`
 router.get('/weather', (req, res) => {
     axios.get(url)
     .then((response) => {
-        const myWeather = respose.data
-        
+        const myWeather = response.data
         res.render('weather', {myWeather})
-
     })
-    //res.render('weather');
+    .catch(error => {
+        res.send(error = "please try again");
+    });
+    //res.render('weather', {myWeather});
 });
 
 module.exports = router;
