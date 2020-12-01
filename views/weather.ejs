@@ -2,7 +2,8 @@
 
 
 <form action="/weather" method="POST">
-    <input type="text" placeholder="enter a city" value="<%= myWeather.name %>"> 
+    <label for="city">City</label>
+    <input type="text" name="city" id="city" placeholder="enter a city"> 
     <button type="submit">Search</button>
 </form>
 
