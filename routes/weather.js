@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
     })
     .catch(error => {
         console.log(error);
-        res.send(error = "refresh your screen");
+        res.send(error = "refresh your screen and input city and state(or country)");
     });
 
 
