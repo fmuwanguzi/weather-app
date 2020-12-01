@@ -1,19 +1,20 @@
 <h2>Your weather page</h2>
 
 
-<form action="">
-    <input type="text" placeholder="enter a city">
+<form action="/weather" method= "GET">
+    <input type="text" placeholder="enter a city" value="<%= myWeather.name %>"> 
     <button type="submit">Search</button>
 </form>
 
 <div class="weather">
-    <h1><%= myWeather.name %> </h1>
+    <h2><%= myWeather.name %> , <%= myWeather.sys.country %> </h2>
+    <h2><%= myWeather.weather[0].descripton %> </h2>
+    <h3><%= myWeather.weather[0].main %> </h3>
+
     
-
-
         <p><b> temperature </b> <%= myWeather.main.temp  %> </p>
         
-        <p><b>feels like</b> </b> <%= myWeather.main.feels_like  %> </p>
+        <p><b>what itfeels like</b> </b> <%= myWeather.main.feels_like  %> </p>
         
         <p><b>minimum temp</b> <%= myWeather.main.temp_min %> </p>
         
@@ -21,4 +22,4 @@
         
         <p><b>humidity</b> <%= myWeather.main.humidity %> </p>
     
-    </div> 
+</div> 
