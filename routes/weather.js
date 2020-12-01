@@ -16,7 +16,7 @@ let API_KEY = process.env.API_KEY;
 let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${API_KEY}`
 
 //setting up to get weather in Boston
-router.get('/weather', (req, res) => {
+router.get('/', (req, res) => {
     console.log('---weatherGetRoute---');
     axios.get(url)
     .then((response) => {
@@ -33,19 +33,24 @@ router.get('/weather', (req, res) => {
     });
 });
 
-router.post('/weather', (req, res) => {
+router.post('/', (req, res) => {
     console.log('----weatherRoute----');
     let newCity = req.body.city;
     let newUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity}=imperial&appid=${API_KEY}`;
 
         axios.get(newUrl)
         .then((response) => {
-        const myWeather = response.data
-        console.log(myWeather);
+            const myWeather = response.data
+            console.log(myWeather);
 
             res.render('weather', {myWeather});
 
+    })
+    .catch(error => {
+        console.log(error);
+        res.send(error = "refresh your screen");
     });
+
 
 })
 
