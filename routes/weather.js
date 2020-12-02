@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
 //prepping post route for weather to be added using add to profile button
 router.post('/', async (req, res) => {
     //Gets form data and add a new record to DB
-    res.send(req.body);
+    //res.send(req.body);
     try {
       await db.weather.findOrCreate({
         where: {

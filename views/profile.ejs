@@ -3,6 +3,33 @@
 <h3>Welcome to your PROFILE</h3>
 
 
+<div class="profile">
+
+
+    <h2><%= myWeather.name %> , <%= myWeather.sys.country %> </h2>
+    <h2><%= myWeather.weather[0].descripton %> </h2>
+    <h3><%= myWeather.weather[0].main %> </h3>
+
+    <img src="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png" width="50px" height="50px" alt="">
+    
+        <p><b> temperature </b> <%= myWeather.main.temp  %> </p>
+        
+        <p><b>what itfeels like</b> </b> <%= myWeather.main.feels_like  %> </p>
+        
+        <p><b>minimum temp</b> <%= myWeather.main.temp_min %> </p>
+        
+        <p><b>max temp</b> <%=myWeather.main.temp_max  %> </p>
+        
+        <p><b>humidity</b> <%= myWeather.main.humidity %> </p>
+   
+ 
+        <form action="/profile/<%= myWeather.name %>?_method=DELETE" method="POST">
+            <input type="submit" value="Remove from Favorites">
+            <button class="btn btn-primary">Delete from profile</button>
+        </form>
+
+</div>
+
 
 
 
