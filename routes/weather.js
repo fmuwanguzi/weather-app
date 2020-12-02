@@ -81,7 +81,7 @@ router.post('/', (req, res) => {
     //                  res.redirect('weather',{weather});
     //              }).catch(error => {
     //                     res.send(error = "error")}
-    //                  if(!newUrl) {
+    //                  if(!newUrl === newUrl) {
     //                      return;
     //                     }
     //             })
