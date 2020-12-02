@@ -55,6 +55,36 @@ router.post('/', (req, res) => {
 
 })
 
+//prepping post route for weather to be added using add to profile button
+router.post('/', async (req, res) => {
+    // TODO: Get form data and add a new record to DB
+    res.send(req.body);
+    try {
+      await db.pokemon.findOrCreate({
+        where: {
+          city: req.body.city
+        }
+      })
+        res.redirect('/profile')
+    } catch(error) {
+      res.render('error')
+    }
+});
+
+
+
+//prepping get route for weather added to profile
+router.get('/profile', async (req, res) => {
+    
+    try {
+      const addedWeather = await db.weather.findAll();
+      res.render('profile', {weather: addedWeather});
+  
+    } catch(error){
+      res.render('error')
+    }
+  });
+
 
 //  router.post('/' , (req, res) => {
     
