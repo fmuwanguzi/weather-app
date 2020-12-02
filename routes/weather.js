@@ -56,19 +56,17 @@ router.post('/', (req, res) => {
 })
 
 //prepping post route for weather to be added using add to profile button
-router.post('/', async (req, res) => {
+router.post('/save',(req, res) => { 
+    console.log('inside of post route for weather');
     //Gets form data and add a new record to DB
-    //res.send(req.body);
-    try {
-      await db.weather.findOrCreate({
-        where: {
-            city: req.body.city
-        }
-      })
-        res.redirect('/profile', {weather})
-    } catch(error) {
-      res.render('error')
-    }
+    console.log(req.body.myWeather.main);
+      
+    // await db.weather.findOrCreate({
+    //     where: {
+    //         city: req.body.city
+    //     }
+    //   })
+        
 });
 
 

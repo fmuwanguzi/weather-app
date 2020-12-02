@@ -26,8 +26,8 @@
         
         <p><b>humidity</b> <%= myWeather.main.humidity %> </p>
 
-        <form action="/profile" method="POST">
-            <input hidden type="text" name="name">
+        <form action="/weather/save" method="POST">
+            <input hidden type="text" name="myWeather" id="myWeather" value="<%= myWeather%>">
             <button class="btn btn-primary">add weather to profile</button>
         </form>
 
