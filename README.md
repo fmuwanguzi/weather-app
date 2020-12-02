@@ -111,7 +111,7 @@ This is my second project done with general assembly a 12 week 40 hour coding bo
 
 If you would like to access/contribute you can fork this project at `https://github.com/fmuwanguzi/weather-app`.
 
-#### Weather API and weather routes
+### Weather API and weather routes
 
 Started by adding a `weather.js` file to my routes folder. This can be done in the terminal with `touch wether.js` or directly through vscode.
 
@@ -138,3 +138,11 @@ To begin working with the weather api I was interested I will need `axios`(to fe
 
 If you would like to read more about the openweather api here is a link `https://openweathermap.org/api` I used the `current weather data api` but as a stretch goal or if time permits I would like to switch to the `one call api` which I learned about a few days into my project.
 
+## Accessing the api key
+
+First step you need to do is to register with openweathermap its free 🤝 , then you can get free api key. 
+
+I then used `postman` which is a api client to look at some of the information I would get back using the api.
+
+Here some information I got back.
+![image](postman.png)
