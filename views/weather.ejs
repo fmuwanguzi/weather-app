@@ -1,6 +1,8 @@
 <h2>Your weather page</h2>
 
 
+<h3> Your searches will be added to your profile</h3>
+
 <form action="/weather" method="POST">
     <label for="city">City, State</label>
     <input type="text" name="city" id="city" placeholder="enter a city and state(country)"> 
@@ -12,6 +14,7 @@
     <h2><%= myWeather.weather[0].descripton %> </h2>
     <h3><%= myWeather.weather[0].main %> </h3>
 
+    <img src="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png" width="80px" height="80px" alt="">
     
         <p><b> temperature </b> <%= myWeather.main.temp  %> </p>
         
@@ -22,5 +25,5 @@
         <p><b>max temp</b> <%=myWeather.main.temp_max  %> </p>
         
         <p><b>humidity</b> <%= myWeather.main.humidity %> </p>
-    
+
 </div> 

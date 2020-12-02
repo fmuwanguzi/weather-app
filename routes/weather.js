@@ -55,11 +55,37 @@ router.post('/', (req, res) => {
 
 })
 
-//     db.weather.create({
-//         name: req.body.name
-//     }).then((_weather)=>{
-//         res.redirect('/weather')
+
+//  router.post('/' , (req, res) => {
+    
+//      db.weather.findOrCreate({ //so you can't create the same city value
+//        where:{city: req.body.city}
+//     }).then((weather) => {
+//         res.redirect('weather',{weather});
 //     })
+//     .catch(error => {
+//         console.log(error);
+//         res.send(error = "refresh your screen and input city and state(or country)");
+//     });
+
 // })
+
+    // router.post('/', async (req,res) => {
+    //     let newCity = req.body.city;
+    //     let newUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity}=imperial&appid=${API_KEY}`; 
+        
+    //     try{
+    //         await db.weather.find({ 
+    //                 where: {city: req.body.city}
+    //              }).then((weather) => {
+    //                  res.redirect('weather',{weather});
+    //              }).catch(error => {
+    //                     res.send(error = "error")}
+    //                  if(!newUrl) {
+    //                      return;
+    //                     }
+    //             })
+    //         })
+        
 
 module.exports = router;
