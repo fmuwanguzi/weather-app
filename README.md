@@ -111,4 +111,30 @@ This is my second project done with general assembly a 12 week 40 hour coding bo
 
 If you would like to access/contribute you can fork this project at `https://github.com/fmuwanguzi/weather-app`.
 
-#### 
+#### Weather API and weather routes
+
+Started by adding a `weather.js` file to my routes folder. This can be done in the terminal with `touch wether.js` or directly through vscode.
+
+I then allowed my app to use the routes in that file by adding
+
+```js 
+app.use('/weather', require('./routes/weather'));
+```
+
+With that complete I added some of the
+
+```js
+const express = require('express');
+const router = express.Router();
+const db = require('../models');
+const axios = require('axios');
+require('dotenv').config()
+
+const app = express();
+app.use(express.urlencoded({ extended: false }));
+```
+
+To begin working with the weather api I was interested I will need `axios`(to fetch the url) and `dotenv` to hide my API key.
+
+If you would like to read more about the openweather api here is a link `https://openweathermap.org/api` I used the `current weather data api` but as a stretch goal or if time permits I would like to switch to the `one call api` which I learned about a few days into my project.
+
