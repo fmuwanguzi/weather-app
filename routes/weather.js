@@ -60,7 +60,7 @@ router.post('/', async (req, res) => {
     // TODO: Get form data and add a new record to DB
     res.send(req.body);
     try {
-      await db.pokemon.findOrCreate({
+      await db.weather.findOrCreate({
         where: {
           city: req.body.city
         }
