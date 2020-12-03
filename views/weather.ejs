@@ -1,17 +1,17 @@
-<h2>Your weather page</h2>
+<h2>Your weather</h2>
 
 
-<h3> search your fav places for current weather and add to your profile</h3>
-
-<form action="/weather" method="POST">
+<form action="/weather" method="POST" class="search">
     <label for="city">City, State</label>
     <input type="text" name="city" id="city" placeholder="enter a city and state(country)"> 
-    <button type="submit">Search</button>
+    <button type="submit" class="btn btn-info">Search</button>
 </form>
+
+<br>
 
 <div class="card" style="width: 18rem;">
     
-    <!-- <img src="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png" class="card-img-top" width="50px" height="50px" alt="..."> -->
+    <!-- <img src="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png" class="card-img-top" width="100px" height="180px" alt="..."> -->
     
     <div class="card-body">
     <h2 class="card-title"><%= myWeather.name %> , <%= myWeather.sys.country %> </h2>
@@ -22,7 +22,7 @@
     
         <p class="card-text"><b> temperature </b> <%= myWeather.main.temp  %> </p>
         
-        <p class="card-text"><b>what itfeels like</b> </b> <%= myWeather.main.feels_like  %> </p>
+        <p class="card-text"><b>what it feels like</b> </b> <%= myWeather.main.feels_like  %> </p>
         
         <p class="card-text"><b>minimum temp</b> <%= myWeather.main.temp_min %> </p>
         
@@ -33,18 +33,18 @@
             <!-- <div> <%= JSON.stringify(myWeather.name, null, 2) %> </div>  -->
 
         <form action="/weather/save" method="POST">
-            <input hidden type="image" name="icon" id="icon" value="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png">
+            <!-- <input hidden type="image" name="icon" id="icon" value="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png"> -->
             <input hidden type="text" name="city" id="city" value="<%=myWeather.name%>">
             <input hidden type="text" name="country" id="country" value="<%=myWeather.sys.country%>">
             <input hidden type="text" name="descripton" id="description" value="<%=myWeather.weather[0].description%>">
-            <input hidden type="text" name="main" id="main" value="<%=myWeather.weather[0].main%>">
+            <!-- <input hidden type="text" name="main" id="main" value="<%=myWeather.weather[0].main%>"> -->
             <input hidden type="number" name="temperature" id="temperature" value="<%=myWeather.main.temp%>">
             <input hidden type="number" name="feels_like" id="feels_like" value="<%=myWeather.main.feels_like%>">
             <input hidden type="number" name="min_temp" id="min_temp" value="<%=myWeather.main.temp_min%>">
             <input hidden type="number" name="max_temp" id="max_temp" value="<%=myWeather.main.temp_max%>">
             <input hidden type="number" name="humidity" id="humidity" value="<%=myWeather.main.humidity%>">
 
-            <button class="btn btn-primary">add weather to profile</button>
+            <button class="btn btn-dark">add weather to profile</button>
         </form>
     </div>
    

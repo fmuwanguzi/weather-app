@@ -1,18 +1,20 @@
-nav ul li {
+/* nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
-}
+} */
 
 h1 {
   color: chartreuse;
 }
 
-.card{
-  background-color: lightseagreen;
-  position: absolute;
-  width: 300px;
-  height: 400px;
-  text-align: left;
-  
+ .card{
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */  
+}
+
+.search{
+  margin: 0 auto;
+  width:40%
 }
