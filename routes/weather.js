@@ -62,19 +62,21 @@ router.post('/save',(req, res) => {
     console.log('---THE OBJECT MY WEATHER---', req.body);
     db.weather.findOrCreate({
         where: { weather: req.body.city},
-            defaults:{
-                //icon: req.body.icon,
-                country: req.body.country,
-                description: req.body.description,
-                //main: req.body.main,
-                temperature: req.body.temperature,
-                feels_like: req.body.feels,
-                min_temp: req.body.min,
-                max_temp: req.body.max,
-                humidity: req.body.humidity}
-        }) .then(()=>{
-                res.redirect('/profile');
-              });
+        defaults:{
+            //icon: req.body.icon,
+            country: req.body.country,
+            description: req.body.description,
+            //main: req.body.main,
+            temperature: req.body.temperature,
+            feels_like: req.body.feels,
+            min_temp: req.body.min,
+            max_temp: req.body.max,
+            humidity: req.body.humidity}
+        }) 
+        .then((weather)=>{
+            console.log(weather.get());
+            res.redirect('/profile');
+        });
   })
 
 
