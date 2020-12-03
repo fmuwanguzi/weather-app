@@ -72,7 +72,7 @@ router.post('/save',(req, res) => {
                 min_temp: req.body.min,
                 max_temp: req.body.max,
                 humidity: req.body.humidity}
-        }) .then((post)=>{
+        }) .then(()=>{
                 res.redirect('/profile');
               });
   })
