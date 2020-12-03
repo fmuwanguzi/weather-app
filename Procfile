@@ -1,0 +1,1 @@
+web: sequelize dg:migrate && node server.js
