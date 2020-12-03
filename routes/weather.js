@@ -60,22 +60,22 @@ router.post('/save',(req, res) => {
     console.log('-----inside of post route for weather-----');
     //Gets form data and add a new record to DB then redirect to my profile page
     console.log('---THE OBJECT MY WEATHER---', req.body);
-    // db.weather.findOrCreate({
-    //     where: { weather: req.body.name},
-    //         defaults:{
-    //             icon: req.body.icon,
-    //             country: req.body.country,
-    //             description: req.body.description,
-    //             main: req.body.main,
-    //             temp: req.body.temp,
-    //             feels: req.body.feels,
-    //             min: req.body.min,
-    //             max: req.body.max,
-    //             humidity: req.body.humidity}
-    //     }) .then(([weather, created])=>{
-    //             console.log(weather); // returns info about the weather
-    //           });
-})
+    db.weather.findOrCreate({
+        where: { weather: req.body.city},
+            defaults:{
+                //icon: req.body.icon,
+                country: req.body.country,
+                description: req.body.description,
+                //main: req.body.main,
+                temperature: req.body.temperature,
+                feels_like: req.body.feels,
+                min_temp: req.body.min,
+                max_temp: req.body.max,
+                humidity: req.body.humidity}
+        }) .then(([weather, created])=>{
+                console.log(weather); // returns info about the weather
+              });
+  })
 
 
 //prepping get route for weather added to profile

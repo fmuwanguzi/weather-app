@@ -33,15 +33,15 @@
             <!-- <div> <%= JSON.stringify(myWeather.name, null, 2) %> </div>  -->
 
         <form action="/weather/save" method="POST">
-            <input hidden type="text" name="icon" id="icon" value="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png">
-            <input hidden type="text" name="name" id="name" value="<%=myWeather.name%>">
+            <input hidden type="image" name="icon" id="icon" value="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png">
+            <input hidden type="text" name="city" id="city" value="<%=myWeather.name%>">
             <input hidden type="text" name="country" id="country" value="<%=myWeather.sys.country%>">
             <input hidden type="text" name="descripton" id="description" value="<%=myWeather.weather[0].description%>">
             <input hidden type="text" name="main" id="main" value="<%=myWeather.weather[0].main%>">
-            <input hidden type="number" name="temp" id="temp" value="<%=myWeather.main.temp%>">
-            <input hidden type="number" name="feels" id="feels" value="<%=myWeather.main.feels_like%>">
-            <input hidden type="number" name="min" id="min" value="<%=myWeather.main.temp_min%>">
-            <input hidden type="number" name="max" id="max" value="<%=myWeather.main.temp_max%>">
+            <input hidden type="number" name="temperature" id="temperature" value="<%=myWeather.main.temp%>">
+            <input hidden type="number" name="feels_like" id="feels_like" value="<%=myWeather.main.feels_like%>">
+            <input hidden type="number" name="min_temp" id="min_temp" value="<%=myWeather.main.temp_min%>">
+            <input hidden type="number" name="max_temp" id="max_temp" value="<%=myWeather.main.temp_max%>">
             <input hidden type="number" name="humidity" id="humidity" value="<%=myWeather.main.humidity%>">
 
             <button class="btn btn-primary">add weather to profile</button>
