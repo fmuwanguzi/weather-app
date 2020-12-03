@@ -57,31 +57,38 @@ router.post('/', (req, res) => {
 
 //prepping post route for weather to be added using add to profile button
 router.post('/save',(req, res) => { 
-    console.log('inside of post route for weather');
-    //Gets form data and add a new record to DB
-    console.log(req.body.myWeather.main);
-      
-    // await db.weather.findOrCreate({
-    //     where: {
-    //         city: req.body.city
-    //     }
-    //   })
-        
-});
-
+    console.log('-----inside of post route for weather-----');
+    //Gets form data and add a new record to DB then redirect to my profile page
+    console.log('---THE OBJECT MY WEATHER---', req.body);
+    // db.weather.findOrCreate({
+    //     where: { weather: req.body.name},
+    //         defaults:{
+    //             icon: req.body.icon,
+    //             country: req.body.country,
+    //             description: req.body.description,
+    //             main: req.body.main,
+    //             temp: req.body.temp,
+    //             feels: req.body.feels,
+    //             min: req.body.min,
+    //             max: req.body.max,
+    //             humidity: req.body.humidity}
+    //     }) .then(([weather, created])=>{
+    //             console.log(weather); // returns info about the weather
+    //           });
+})
 
 
 //prepping get route for weather added to profile
-router.get('/profile', async (req, res) => {
+// router.get('/profile', async (req, res) => {
     
-    try {
-      const addedWeather = await db.weather.findAll();
-      res.render('profile', {weather: addedWeather});
+//     try {
+//       const addedWeather = await db.weather.findAll();
+//       res.render('profile', {weather: addedWeather});
   
-    } catch(error){
-      res.render('error')
-    }
-  });
+//     } catch(error){
+//       res.render('error')
+//     }
+//   });
 
 
 //  router.post('/' , (req, res) => {

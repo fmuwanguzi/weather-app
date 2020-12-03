@@ -145,4 +145,5 @@ First step you need to do is to register with openweathermap its free 🤝 , the
 I then used `postman` which is a api client to look at some of the information I would get back using the api.
 
 Here some information I got back.
+
 ![images](./images/postan.png)
