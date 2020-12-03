@@ -1,1 +1,1 @@
-web: sequelize dg:migrate && node server.js
+web: sequelize db:migrate && node server.js
