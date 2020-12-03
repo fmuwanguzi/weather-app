@@ -111,6 +111,8 @@ This is my second project done with general assembly a 12 week 40 hour coding bo
 
 If you would like to access/contribute you can fork this project at `https://github.com/fmuwanguzi/weather-app`.
 
+You can also click on this link to use my app. Don't forget to signup.`https://my-weather-app.herokuapp.com`
+
 ### Weather API and weather routes
 
 Started by adding a `weather.js` file to my routes folder. This can be done in the terminal with `touch wether.js` or directly through vscode.
