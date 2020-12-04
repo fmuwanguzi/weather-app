@@ -7,7 +7,7 @@
 
 <% weather.forEach((user) => { %>
   <div>
-    <h2> display info here<%=  user.name %> , <%= user.sys.country %> 
+    <h2> display info here <%=user.name %> , <%= user.sys.country %> 
         <%= user.weather[0].description %> , <%= user.main.temp %>,
         <%= user.main.feels_like  %> ,<%= user.main.temp_min %>,
         <%=user.main.temp_max  %>,<%= user.main.humidity %>

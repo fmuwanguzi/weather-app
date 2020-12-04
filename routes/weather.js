@@ -18,7 +18,7 @@ let API_KEY = process.env.API_KEY;
 //added units=imperial to get the right units for United states 
 let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${API_KEY}`
 
-//setting up to get weather in default los Angeles
+//setting up to get weather in default city los Angeles at start up of page
 router.get('/', (req, res) => {
     console.log('---weatherGetRoute---');
     axios.get(url)
@@ -65,20 +65,18 @@ router.post('/save', isLoggedIn, (req, res) => {
     console.log('-----inside of post route for weather-----');
     //Gets form data and add a new record to DB then redirect to my profile page
     console.log('---THE OBJECT MY WEATHER---', req.body);
+    //const obj = JSON.parse(JSON.stringify(req.body));
+    //console.log('----GETTING RID OF NULL------',obj);
     console.log(req.user.id, '----USER ID---')
-    db.weather.create({
-        where: { weather: req.body.city},
-        defaults:{
-            //id: req.body.id,
-            //icon: req.body.icon,
-            country: req.body.country,
-            description: req.body.description,
-            //main: req.body.main,
-            temperature: req.body.temperature,
-            feels_like: req.body.feels,
-            min_temp: req.body.min,
-            max_temp: req.body.max,
-            humidity: req.body.humidity}
+    db.weather.create({city: req.body.city,
+                    country: req.body.country,
+                    description: req.body.description,
+                    //main: req.body.main,
+                    temperature: req.body.temperature,
+                    feels_like: req.body.feels_like,
+                    min_temp: req.body.min_temp,
+                    max_temp: req.body.max_temp,
+                    humidity: req.body.humidity
         }) 
         .then((weather)=>{
             console.log(weather.get());//results are comming back as null
