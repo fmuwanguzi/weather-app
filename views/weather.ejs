@@ -14,7 +14,7 @@
     <!-- <img src="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png" class="card-img-top" width="100px" height="180px" alt="..."> -->
     
     <div class="card-body">
-    <h2 class="card-title"><%= myWeather.name %> , <%= myWeather.sys.country %> </h2>
+    <h2 class="card-title"> <%= myWeather.name %> , <%= myWeather.sys.country %> </h2>
     
     <h2 class="card-text"><%= myWeather.weather[0].description %> </h2>
     <!-- <h3 class="card-text"><%= myWeather.weather[0].main %> </h3> -->
@@ -29,6 +29,8 @@
         <p class="card-text"><b>max temp</b> <%=myWeather.main.temp_max  %> </p>
         
         <p class="card-text"><b>humidity</b> <%= myWeather.main.humidity %> </p>
+
+        <!-- <p class="card-text"><b>id</b> <%= myWeather.id %> </p> -->
  
             <!-- <div> <%= JSON.stringify(myWeather.name, null, 2) %> </div>  -->
 
@@ -43,7 +45,8 @@
             <input hidden type="number" name="min_temp" id="min_temp" value="<%=myWeather.main.temp_min%>">
             <input hidden type="number" name="max_temp" id="max_temp" value="<%=myWeather.main.temp_max%>">
             <input hidden type="number" name="humidity" id="humidity" value="<%=myWeather.main.humidity%>">
-
+            <!-- <input hidden type="number" name="id" id="id" value="<myWeather.id%>"> -->
+            
             <button class="btn btn-dark">add weather to profile</button>
         </form>
     </div>

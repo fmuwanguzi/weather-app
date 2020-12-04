@@ -4,10 +4,13 @@ const db = require('../models');
 const axios = require('axios');
 require('dotenv').config()
 
+const isLoggedIn = require('../middleware/isLoggedIn');
+
+
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 
-let city = 'paris'
+let city = 'los angeles'
 //let city = 'req.body.city'
 let API_KEY = process.env.API_KEY;
 //console.log(API_KEY); to test thats its printing out correctly
@@ -15,7 +18,7 @@ let API_KEY = process.env.API_KEY;
 //added units=imperial to get the right units for United states 
 let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${API_KEY}`
 
-//setting up to get weather in Boston
+//setting up to get weather in default los Angeles
 router.get('/', (req, res) => {
     console.log('---weatherGetRoute---');
     axios.get(url)
@@ -33,6 +36,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//Allows to search through the search bar for weather in different cities 
 router.post('/', (req, res) => {
     console.log('----weatherRoute----');
     let newCity = req.body.city;
@@ -49,20 +53,23 @@ router.post('/', (req, res) => {
     })
     .catch(error => {
         console.log(error);
-        res.send(error = "refresh your screen and input city and state(or country)");
+        res.send(error = "please input city and state(or country) correctly");
+        res.redirect('/')
     });
 
 
 })
 
 //prepping post route for weather to be added using add to profile button
-router.post('/save',(req, res) => { 
+router.post('/save', isLoggedIn, (req, res) => { 
     console.log('-----inside of post route for weather-----');
     //Gets form data and add a new record to DB then redirect to my profile page
     console.log('---THE OBJECT MY WEATHER---', req.body);
-    db.weather.findOrCreate({
+    console.log(req.user.id, '----USER ID---')
+    db.weather.create({
         where: { weather: req.body.city},
         defaults:{
+            //id: req.body.id,
             //icon: req.body.icon,
             country: req.body.country,
             description: req.body.description,
@@ -74,7 +81,7 @@ router.post('/save',(req, res) => {
             humidity: req.body.humidity}
         }) 
         .then((weather)=>{
-            console.log(weather.get());
+            console.log(weather.get());//results are comming back as null
             res.redirect('/profile');
         });
   })

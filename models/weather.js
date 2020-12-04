@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.weather.belongsTo(models.user)
-      
+      models.weather.belongsToMany(models.user, {through: 'usersWeathers'})
+      //models.weather.belongsTo(models.user)
     }
   };
   weather.init({
@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     feels_like: DataTypes.FLOAT,
     min_temp: DataTypes.FLOAT,
     max_temp: DataTypes.FLOAT,
-    humidity: DataTypes.INTEGER
+    humidity: DataTypes.INTEGER,
+    
   }, {
     sequelize,
     modelName: 'weather',
