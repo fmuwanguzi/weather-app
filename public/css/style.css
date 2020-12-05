@@ -5,7 +5,7 @@
 } */
 
 h1 {
-  color: chartreuse;
+  color: lightskyblue;
 }
 
  .card{
@@ -14,7 +14,7 @@ h1 {
   margin-bottom: 10px; /* Added */  
 }
 
-.search{
+/* .search{
   margin: 0 auto;
   width:40%
-}
+} */

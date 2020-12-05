@@ -1,11 +1,13 @@
-<h2>Your weather</h2>
+<h2><center> Welcome ⬇ </center> </h2>
 
 
+<center>
 <form action="/weather" method="POST" class="search">
     <label for="city">City, State</label>
     <input type="text" name="city" id="city" placeholder="enter a city and state(country)"> 
-    <button type="submit" class="btn btn-info">Search</button>
+    <button type="submit" class="btn btn-outline-success my-2 my-sm-0" data-toggle="popover" >Search</button>
 </form>
+</center>
 
 <br>
 
@@ -47,7 +49,7 @@
             <input hidden type="number" name="humidity" id="humidity" value="<%=myWeather.main.humidity%>">
             <!-- <input hidden type="number" name="id" id="id" value="<myWeather.id%>"> -->
             
-            <button class="btn btn-dark">add weather to profile</button>
+            <button class="btn btn-dark" data-toggle="popover">add weather to profile</button>
         </form>
     </div>
    
