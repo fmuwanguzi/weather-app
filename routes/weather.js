@@ -80,24 +80,21 @@ router.post('/save', isLoggedIn, (req, res) => {
         }) 
         .then((weather)=>{
             console.log(weather.get());
-            res.render('./profile', { weather : weather.get() });
+            res.render('./save', { weather : weather.get() });
         });
   })
 
   router.get('/save', isLoggedIn, (req,res) => {
       console.log('---INSIDE THE GET WEATHER SAVE ROUTE ----');
-      console.log(req.user.id);
-      
-      db.weather.findAll({
-          where:{
-              city: req.body.city
-          }
-      }).then((response)=>{
-          console.log(response);            
+    //   console.log(req.user.id);
+    //   const user = req.user.id
+      db.weather.findAll()
+      .then((weather)=> {
+          console.log(weather);
+          res.render('./profile', {weather: weather});
       })
      
-      
-  })
+    })
 
 
 //prepping get route for weather added to profile
