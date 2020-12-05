@@ -1,36 +1,12 @@
-<center>
-<!-- <h2 style="color: lightskyblue">Profile Page</h2>
 
-<h3 style="color: lightskyblue">Welcome to your PROFILE</h3> -->
-
-
-<!-- <h3 style="color: lightskyblue">Your places </h3>
-
-<form action="/weather/save">
-    <button>all saved places</button>
-</form>
-</center>
- <br>
- <br>
-
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h3 class="card-title"><%=weather.city %>,<%=weather.country%> </h3>
-        <h2 class="card-text"><%=weather.description %></h2>
-        <P class="card-text"><b> temperature </b><%=weather.temperature %></P>
-        <P class="card-text"><b>what it feels like</b> <%=weather.feels_like %></P>
-        <P class="card-text"><b>minimum temp</b> <%=weather.min_temp %></P>
-        <P class="card-text"><b>max temp</b> <%=weather.max_temp %></P>
-        <P class="card-text"><b>humidity</b><%=weather.humidity %></P>
-    </div>
-
-</div> -->
 
 <% weather.forEach(user => { %>
     <ul>
-        <li><%= user.city %>, <%= user.country %>
+        <li><%= user.city %>, <%= user.country %> ,
+             <%=user.description %>,<b>temp</b><%=user.temperature %>
             <form action="profile?_method=DELETE" method="POST">
-                <input type="submit" value="Remove">
+            <input hidden type="text" name="city" id="city" value="<%=user.city%>">
+            <input type="submit" value="remove saved">
             </form>
         </li> 
     </ul>

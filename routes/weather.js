@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const axios = require('axios');
+const methodOverride = require('method-override')
 require('dotenv').config()
 
 const isLoggedIn = require('../middleware/isLoggedIn');
@@ -9,6 +10,7 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'))
 
 let city = 'los angeles'
 //let city = 'req.body.city'
@@ -94,6 +96,21 @@ router.post('/save', isLoggedIn, (req, res) => {
           res.render('./profile', {weather: weather});
       })
      
+    })
+
+    router.delete('/profile', (req,res) => {
+        
+        db.weather.findOne({
+            where: {
+                city: req.body.city
+            }
+        }).then((weather)=>{
+            weather.destroy().
+            then(()=>{
+                res.redirect('./profile');
+            })
+        })
+
     })
 
 
