@@ -1,20 +1,28 @@
-<h2>Profile Page</h2>
+<center>
+<!-- <h2 style="color: lightskyblue">Profile Page</h2>
 
-<h3>Welcome to your PROFILE</h3>
+<h3 style="color: lightskyblue">Welcome to your PROFILE</h3> -->
 
 
-<h1> </h1>
+<h3 style="color: lightskyblue">Your places </h3>
+</center>
+ <br>
+ <br>
 
-<% weather.forEach((user) => { %>
-  <div>
-    <h2> display info here <%=user.name %> , <%= user.sys.country %> 
-        <%= user.weather[0].description %> , <%= user.main.temp %>,
-        <%= user.main.feels_like  %> ,<%= user.main.temp_min %>,
-        <%=user.main.temp_max  %>,<%= user.main.humidity %>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h3 class="card-title"><%=weather.city %>,<%=weather.country%> </h3>
+        <h2 class="card-text"><%=weather.description %></h2>
+        <P class="card-text"><%=weather.temperature %></P>
+        <P class="card-text"><%=weather.feels_like %></P>
+        <P class="card-text"><%=weather.min_temp %></P>
+        <P class="card-text"><%=weather.max_temp %></P>
+        <P class="card-text"><%=weather.humidity %></P>
+    </div>
 
-    </h2>
-  </div>
-  <% }) %>  
+</div>
 
+
+  
 
 

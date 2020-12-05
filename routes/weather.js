@@ -79,9 +79,24 @@ router.post('/save', isLoggedIn, (req, res) => {
                     humidity: req.body.humidity
         }) 
         .then((weather)=>{
-            console.log(weather.get());//results are comming back as null
-            res.redirect('/profile');
+            console.log(weather.get());
+            res.render('./profile', { weather : weather.get() });
         });
+  })
+
+  router.get('/save', isLoggedIn, (req,res) => {
+      console.log('---INSIDE THE GET WEATHER SAVE ROUTE ----');
+      console.log(req.user.id);
+      
+      db.weather.findAll({
+          where:{
+              city: req.body.city
+          }
+      }).then((response)=>{
+          console.log(response);            
+      })
+     
+      
   })
 
 
