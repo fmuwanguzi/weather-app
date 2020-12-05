@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
     console.log('----weatherRoute----');
     let newCity = req.body.city;
     console.log('----the new city starts here ----' + newCity )
-    let newUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity}=imperial&appid=${API_KEY}`;
+    let newUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity}&units=imperial&appid=${API_KEY}`;
 
         axios.get(newUrl)
         .then((response) => {
