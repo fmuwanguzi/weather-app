@@ -12,8 +12,8 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'))
 
-let city = 'los angeles'
 //let city = 'req.body.city'
+let city = 'los angeles'
 let API_KEY = process.env.API_KEY;
 //console.log(API_KEY); to test thats its printing out correctly
 
@@ -54,9 +54,9 @@ router.post('/', (req, res) => {
 
     })
     .catch(error => {
-        console.log(error);
-        res.send(error = "please input city and state(or country) correctly");
-        res.redirect('/')
+        //console.log(error);
+        //res.send(error = "please input city and state(or country) correctly");
+        res.render('./error')
     });
 
 
@@ -98,18 +98,20 @@ router.post('/save', isLoggedIn, (req, res) => {
      
     })
 
-    router.delete('/profile', (req,res) => {
-        
-        db.weather.findOne({
-            where: {
-                city: req.body.city
-            }
-        }).then((weather)=>{
-            weather.destroy().
-            then(()=>{
-                res.redirect('./profile');
-            })
-        })
+    router.delete('/save', isLoggedIn, (req,res) => {
+    console.log('-----INSIDE DELETE ROUTE-----')
+    //const obj = JSON.parse(JSON.stringify(req.body));
+        //console.log(obj);
+            console.log(req.body);
+        //     const city = req.body;
+        //     db.weather.findOne({
+        //     where: { city : city}
+        // }).then((weather)=>{
+        //     weather.destroy().
+        //     then(()=>{
+        //         res.redirect('./save', {weather: weather});
+        //     })
+        // })
 
     })
 

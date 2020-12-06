@@ -4,9 +4,9 @@
     <ul>
         <li><%= user.city %>, <%= user.country %> ,
              <%=user.description %>,<b>temp</b><%=user.temperature %>
-            <form action="profile?_method=DELETE" method="POST">
+            <form action="/weather/save?_method=DELETE" method="POST">
             <input hidden type="text" name="city" id="city" value="<%=user.city%>">
-            <input type="submit" value="remove saved">
+            <input type="submit" value="remove from saved">
             </form>
         </li> 
     </ul>
