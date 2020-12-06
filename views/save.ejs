@@ -1,10 +1,8 @@
-<center> <h3 style="color: lightskyblue">Your places </h3></center>
-     
-     
+<center> 
+    <h3 style="color: lightskyblue">Your places </h3>
+</center>
      <br>
-
-
-     <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h3 class="card-title"><%=weather.city %>,<%=weather.country%> </h3>
             <h2 class="card-text"><%=weather.description %></h2>
@@ -17,14 +15,7 @@
     
     </div>
     <center>
-        <!-- <h2 style="color: lightskyblue">Profile Page</h2>
-        
-        <h3 style="color: lightskyblue">Welcome to your PROFILE</h3> -->
-        
-        
-       
-        
-        <form action="/weather/save">
+         <form action="/weather/save">
             <button class="btn btn-dark" style="color: lightskyblue" data-toggle="popover">view saved places</button>
         </form>
-        </center>
+    </center>

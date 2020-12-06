@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
     });
 });
 
-//Allows to search through the search bar for weather in different cities 
+//Allows user to search through the search bar for weather in different cities 
 router.post('/', (req, res) => {
     console.log('----weatherRoute----');
     let newCity = req.body.city;
@@ -62,7 +62,7 @@ router.post('/', (req, res) => {
 
 })
 
-//prepping post route for weather to be added using add to profile button
+//post route for weather to be added using add to saved button
 router.post('/save', isLoggedIn, (req, res) => { 
     console.log('-----inside of post route for weather-----');
     //Gets form data and add a new record to DB then redirect to my profile page
@@ -86,6 +86,7 @@ router.post('/save', isLoggedIn, (req, res) => {
         });
   })
 
+//shows all the places user has saved in saved pages
   router.get('/save', isLoggedIn, (req,res) => {
       console.log('---INSIDE THE GET WEATHER SAVE ROUTE ----');
     //   console.log(req.user.id);
@@ -102,18 +103,21 @@ router.post('/save', isLoggedIn, (req, res) => {
     console.log('-----INSIDE DELETE ROUTE-----')
     //const obj = JSON.parse(JSON.stringify(req.body));
         //console.log(obj);
-            console.log(req.body);
-        //     const city = req.body;
-        //     db.weather.findOne({
-        //     where: { city : city}
-        // }).then((weather)=>{
-        //     weather.destroy().
-        //     then(()=>{
-        //         res.redirect('./save', {weather: weather});
-        //     })
-        // })
+            console.log(req.body.city, "THIS IS REQ.BODY.CITY");
+            const city = req.body.city;
+            db.weather.destroy({
+            where: { city : city}
+        }).then((weather)=>{
+                res.redirect('./save');
+                //res.redirect('/save', {weather: weather});
+            })
+        })
 
+//error page
+    router.get('*', (req, res) => {
+        res.render('./error')
     })
+    
 
 
 //prepping get route for weather added to profile

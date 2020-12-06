@@ -6,8 +6,8 @@
         <li style="color: lightskyblue"><%= user.city %>, <%= user.country %> ,
              <%=user.description %>,<b>temp:</b><%=user.temperature %>
             <form action="/weather/save?_method=DELETE" method="POST">
-            <input hidden type="text" name="city" id="city" value="<%=user.city%>">
-            <input class="btn btn-dark" style="color: lightskyblue" data-toggle="popover" type="submit" value="remove from saved">
+            <input hidden type="text" name="city" id="city" value="<%=user.city%>"/>
+            <input class="btn btn-dark" style="color: lightskyblue" data-toggle="popover" type="submit" value="remove from saved"/>
             </form>
         </li> 
     </ul>
