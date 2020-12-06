@@ -132,6 +132,16 @@ router.post('/save', isLoggedIn, (req, res)=>{
             })
         })
 
+    // router.put('/save',isLoggedIn, (req , res)=>{
+    //     console.log(req.body.city);
+    //     const city = req.body.city;
+    //     db.weather.update({
+    //         where: {city : city}
+    //     }).then(()=>{
+    //         res.redirect("./save")
+    //     })
+    // })
+
 //error page
     router.get('*', (req, res) => {
         res.render('./error')
