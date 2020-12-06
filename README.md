@@ -105,7 +105,7 @@ or
 ```
 node server.js
 ```
-## ------- each line above this will be subject to change before the project is turned in --------
+## Weather-APP
 
 This is my second project done with general assembly a 12 week 40 hour coding bootcamp. I decided to make a weather app beause I was always curious about how it works on my iphone. This app incorparates sequelize, express as well as a weather api that send current weather date.
 
@@ -224,5 +224,10 @@ I added a search bar at the top and at the bottom a button to add weather to sav
     </div>
 
 ```
-Here's a little preview of what that looks like.
+## Here's a little preview of what that looks like.
+
+
 ![images](./images/default.png)
+
+
+## This app also uses authentication
