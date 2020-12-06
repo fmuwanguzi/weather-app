@@ -1,6 +1,7 @@
+
+
 <h2 style="color: lightskyblue"><center> Is this reindeer weather ⬇ </center> </h2>
-
-
+<br>
 <center>
 <form action="/weather" method="POST" class="search">
     <label style="color: lightskyblue" for="city">City</label>
@@ -8,9 +9,7 @@
     <button type="submit" class="btn btn-outline-success my-2 my-sm-0" data-toggle="popover" style="color: lightskyblue" >Search</button>
 </form>
 </center>
-
 <br>
-
 <div class="card" style="width: 18rem;">
     
     <!-- <img src="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png" class="card-img-top" width="100px" height="180px" alt="..."> -->
@@ -22,7 +21,7 @@
     <!-- <h3 class="card-text"><%= myWeather.weather[0].main %> </h3> -->
 
     
-        <p class="card-text"><b> temperature </b> <%= myWeather.main.temp  %> </p>
+        <h2 class="card-text"><b>  </b> <%= myWeather.main.temp  %> <b> °F </b> </h2>
         
         <p class="card-text"><b>what it feels like</b>  <%= myWeather.main.feels_like  %> </p>
         

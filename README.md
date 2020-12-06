@@ -107,7 +107,7 @@ node server.js
 ```
 ## Weather-APP
 
-This is my second project done with general assembly a 12 week 40 hour coding bootcamp. I decided to make a weather app beause I was always curious about how it works on my iphone. This app incorparates sequelize, express as well as a weather api that send current weather date.
+This is my second project done with general assembly a 12 week 40 hour a week coding bootcamp. I decided to make a weather app beause I was always curious about how it works on my iphone. This app incorparates sequelize, express, a weather api and some styling using bootstrap.
 
 If you would like to access/contribute you can fork this project at `https://github.com/fmuwanguzi/weather-app`.
 
