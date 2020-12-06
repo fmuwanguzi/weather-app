@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
 })
 
 
-//trying to change this a findOrCreat
+//allows user to add city to saved cities if it is not saved
 router.post('/save', isLoggedIn, (req, res)=>{
     db.weather.findOrCreate({
         where:{ city: req.body.city},

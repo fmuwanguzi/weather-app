@@ -109,13 +109,21 @@ node server.js
 
 This is my second project done with general assembly a 12 week 40 hour a week coding bootcamp. I decided to make a weather app beause I was always curious about how it works on my iphone. This app incorparates sequelize, express, a weather api and some styling using bootstrap.
 
-If you would like to access/contribute you can fork this project at `https://github.com/fmuwanguzi/weather-app`.
+
+
+If you would like to access/contribute you can fork this project at `https://github.com/fmuwanguzi/weather-app`. To clone to your local terminal use `git clone` and the link above.
 
 You can also click on this link to use my app. Don't forget to signup.`https://my-weather-app.herokuapp.com`
 
-If you are following along with code you will need to `npm install` in your terminal to install all dependencies.
+If you are following along with code you will need to `npm install` in your terminal to install all dependencies. You also need to start running your migrations using `sequelize db:migrate`.
+
+## I changed a a few things when I was making the app but this was my first wireframe
+
+![images](./images/wire.png)
 
 ### Weather API and weather routes
+
+### Some of the steps that I followed
 
 Started by adding a `weather.js` file to my routes folder. This can be done in the terminal with `touch wether.js` or directly through vscode.
 
