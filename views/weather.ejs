@@ -16,22 +16,13 @@
     
     <div class="card-body">
     <h2 class="card-title"> <%= myWeather.name %> , <%= myWeather.sys.country %> </h2>
-    
     <h2 class="card-text"><%= myWeather.weather[0].description %> </h2>
-    <!-- <h3 class="card-text"><%= myWeather.weather[0].main %> </h3> -->
+    <h2 class="card-text"><%= myWeather.main.temp  %> <b> °F </b> </h2>
+    <p class="card-text"><b>what it feels like</b>  <%= myWeather.main.feels_like  %>° </p>
+    <p class="card-text"><b>minimum temp</b> <%= myWeather.main.temp_min %>° </p>
+    <p class="card-text"><b>max temp</b> <%=myWeather.main.temp_max  %>° </p>
+    <p class="card-text"><b>humidity</b> <%= myWeather.main.humidity %> </p>
 
-    
-        <h2 class="card-text"><b>  </b> <%= myWeather.main.temp  %> <b> °F </b> </h2>
-        
-        <p class="card-text"><b>what it feels like</b>  <%= myWeather.main.feels_like  %> </p>
-        
-        <p class="card-text"><b>minimum temp</b> <%= myWeather.main.temp_min %> </p>
-        
-        <p class="card-text"><b>max temp</b> <%=myWeather.main.temp_max  %> </p>
-        
-        <p class="card-text"><b>humidity</b> <%= myWeather.main.humidity %> </p>
-
-        <!-- <p class="card-text"><b>id</b> <%= myWeather.id %> </p> -->
  
             <!-- <div> <%= JSON.stringify(myWeather.name, null, 2) %> </div>  -->
 
@@ -48,7 +39,7 @@
             <input hidden type="number" name="humidity" id="humidity" value="<%=myWeather.main.humidity%>">
             <!-- <input hidden type="number" name="id" id="id" value="<myWeather.id%>"> -->
             
-            <button class="btn btn-dark" style="color: lightskyblue" data-toggle="popover">add weather to saved places</button>
+            <button class="btn btn-dark" style="color: lightskyblue" data-toggle="popover">save this location</button>
         </form>
     </div>
    
