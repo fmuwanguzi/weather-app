@@ -45,6 +45,11 @@ body {
   background-image:url('https://library.kissclipart.com/20180928/hfw/kissclipart-santa-in-the-sky-clipart-santa-claus-norad-tracks-41a9bd4fc7b82963.png') ;
   z-index: -1;
 
-}  
+}
+
+html,body{
+  overflow-y: scroll; 
+}
+
 
 
