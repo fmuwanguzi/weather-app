@@ -81,8 +81,6 @@ router.post('/save', isLoggedIn, (req, res)=>{
 //shows all the places user has saved in saved pages
   router.get('/save', isLoggedIn, (req,res) => {
       console.log('---INSIDE THE GET WEATHER SAVE ROUTE ----');
-    //   console.log(req.user.id);
-    //   const user = req.user.id
       db.weather.findAll()
       .then((weather)=> {
           console.log(weather);
@@ -92,15 +90,14 @@ router.post('/save', isLoggedIn, (req, res)=>{
     })
 
     router.delete('/save', isLoggedIn, (req,res) => {
-    console.log('-----INSIDE DELETE ROUTE-----')
-    //const obj = JSON.parse(JSON.stringify(req.body));
-        //console.log(obj);
-            console.log(req.body.city, "THIS IS REQ.BODY.CITY");
-            const city = req.body.city;
-            db.weather.destroy({
+
+        console.log('-----INSIDE DELETE ROUTE-----')
+        console.log(req.body.city, "THIS IS REQ.BODY.CITY");
+        const city = req.body.city;
+        db.weather.destroy({
             where: { city : city}
         }).then((weather)=>{
-                res.redirect('./save');
+            res.redirect('./save');
             })
         })
 
