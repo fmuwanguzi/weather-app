@@ -9,7 +9,7 @@
         <input class="btn btn-dark" style="color: lightskyblue" data-toggle="popover" type="submit" value="remove from saved"/>
       </form>
       
-      <form method="POST" target="_blank" action="https://www.eventbrite.com/d/online/<%=user.city%>/q=<%=user.city%>">
+      <form method="POST" target="_blank" action="https://www.eventbrite.com/d/<%= user.country %>--<%=user.city%>/events/">
         <input hidden type="text" name="city" id="city" value="<%=user.city%>"/>
         <input class="btn btn-dark" style="color: lightskyblue" data-toggle="popover" type="submit" value="Things to do"/>
       </form>   
