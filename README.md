@@ -131,3 +131,8 @@ I added a search bar at the top and at the bottom a button to add weather to sav
 ![images](./images/default.png)
 
 
+## In the future
+
+I would like to addan additional API which would alert the user of weather warnings as well as weather predictions for at least the next 3 days.
+I would also like to incorporate moments into my appliction so when you open it you can see current date and time down the seconds.
+Lastly if its something that wouldn't slow down the app.I would like to add better pictures/animations for the description of the weather. The ones that came with the API were a little dated to me.
