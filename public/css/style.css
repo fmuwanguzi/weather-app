@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Lato&family=Roboto&display=swap');
 /* nav ul li {
   text-decoration: none;
   display: inline-block;
@@ -48,7 +49,8 @@ body {
 }
 
 html,body{
-  overflow-y: scroll; 
+  overflow-y: scroll;
+  font-family: 'Lato', sans-serif;
 }
 
 
