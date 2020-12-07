@@ -112,7 +112,7 @@ router.post('/save', isLoggedIn, (req, res)=>{
     // })
 
 //error page
-    router.get('*', (req, res) => {
+    router.get('/*', (req, res) => {
         res.render('./error')
     })
     
