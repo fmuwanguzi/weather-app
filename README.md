@@ -130,7 +130,7 @@ I added a search bar at the top and at the bottom a button to add weather to sav
 
 ## In the future
 
-#### I would like to addan additional API which would alert the user of weather warnings as well as weather predictions for at least the next 3 days.
+#### I would like to add an additional API which would alert the user of weather warnings as well as weather predictions for at least the next 3 days.
 
 #### I would also like to incorporate moments into my appliction so when you open it you can see current date and time down the seconds.
 
