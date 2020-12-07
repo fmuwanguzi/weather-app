@@ -100,7 +100,6 @@ I added a search bar at the top and at the bottom a button to add weather to sav
     <div class="card-body">
     <h2 class="card-title"> <%= myWeather.name %> , <%= myWeather.sys.country %> </h2>
     <h2 class="card-text"><%= myWeather.weather[0].description %> </h2>
-    <!-- <h3 class="card-text"><%= myWeather.weather[0].main %> </h3> -->
     <p class="card-text"><b> temperature </b> <%= myWeather.main.temp  %> </p>
     <p class="card-text"><b>what it feels like</b>  <%= myWeather.main.feels_like  %> </p>
     <p class="card-text"><b>minimum temp</b> <%= myWeather.main.temp_min %> </p>
@@ -109,11 +108,9 @@ I added a search bar at the top and at the bottom a button to add weather to sav
 
         <!-- button set up-->
         <form action="/weather/save" method="POST">
-            <!-- <input hidden type="image" name="icon" id="icon" value="http://openweathermap.org/img/wn/<%= myWeather.weather[0].icon %>@2x.png"> -->
             <input hidden type="text" name="city" id="city" value="<%=myWeather.name%>">
             <input hidden type="text" name="country" id="country" value="<%=myWeather.sys.country%>">
-            <input hidden type="text" name="description" id="description" value="<%=myWeather.weather[0].description%>">
-            <!-- <input hidden type="text" name="main" id="main" value="<%=myWeather.weather[0].main%>"> -->
+            <input hidden type="text" name="description" id="description" value="<%=myWeather.weather[0].description%>">            
             <input hidden type="number" name="temperature" id="temperature" value="<%=myWeather.main.temp%>">
             <input hidden type="number" name="feels_like" id="feels_like" value="<%=myWeather.main.feels_like%>">
             <input hidden type="number" name="min_temp" id="min_temp" value="<%=myWeather.main.temp_min%>">
@@ -136,5 +133,7 @@ I added a search bar at the top and at the bottom a button to add weather to sav
 #### I would like to addan additional API which would alert the user of weather warnings as well as weather predictions for at least the next 3 days.
 
 #### I would also like to incorporate moments into my appliction so when you open it you can see current date and time down the seconds.
+
+#### I would like to have a drop down of suggested cities cause sometime we can't spell
 
 #### Lastly if its something that wouldn't slow down the app.I would like to add better pictures/animations for the description of the weather. The ones that came with the API were a little dated to me.
