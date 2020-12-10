@@ -100,16 +100,26 @@ router.post('/save', isLoggedIn, (req, res)=>{
             res.redirect('./save');
             })
         })
+    //Give access to the username link
+    router.get('/username',isLoggedIn, (req,res)=>{
+        res.render('./username', {user:req.user})
+    })    
 
-    // router.put('/save',isLoggedIn, (req , res)=>{
-    //     console.log(req.body.city);
-    //     const city = req.body.city;
-    //     db.weather.update({
-    //         where: {city : city}
-    //     }).then(()=>{
-    //         res.redirect("./save")
-    //     })
-    // })
+    //Allow user to change name
+    router.put('/username',isLoggedIn, (req , res)=>{
+        console.log(req.user.name);
+        console.log(req.body.id);
+        console.log(req.user.id)
+        console.log(req.session.passport.user)
+        db.user.update(
+            {name:req.body.name},
+            {
+            where: {id : req.session.passport.user},
+            
+        }).then(()=>{
+            res.redirect("./username")
+        })
+      })
 
 //error page
     router.get('/*', (req, res) => {

@@ -58,6 +58,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 
 
+
 app.use('/auth', require('./routes/auth'));
 
 app.use('/weather', isLoggedIn, require('./routes/weather'));
